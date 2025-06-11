@@ -1,24 +1,19 @@
 const { Given, When, Then } = require("@badeball/cypress-cucumber-preprocessor");
 
-Given("user navigates to {string}", function (string) {
-  cy.log(string);
-  // return "pending";
+Given("user navigates to {string}", function (url) {
+  cy.visit(url)
 });
 
-When("user search for {string}", function (string) {
-  // return "pending";
-});
-
-
-Then(/^user should see "([^"]*)" in the URL$/, (args1) => {
-	console.log(args1);
-	return true;
+When("user search for {string}", function (input) {
+  cy.get('[name="q"]').type(`${input}{enter}`)
 });
 
 
-Then(/^user should see "([^"]*)" in the URL and do this blabla bal$/, (args1) => {
-	console.log(args1);
-	return true;
+Then(/^user should see "([^"]*)" in the URL$/, (url) => {
+	cy.url().should('contain', url)
 });
 
 
+Then(/^user should see "([^"]*)" in the title$/, (title) => {
+	cy.title().should('contain', url)
+});

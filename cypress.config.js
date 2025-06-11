@@ -23,6 +23,9 @@ async function setupNodeEvents(on, config) {
 }
 
 module.exports = defineConfig({
+  viewportHeight: 1080,
+  viewportWidth: 1920,
+  chromeWebSecurity: false,
   e2e: {
     specPattern: "**/*.feature",
     setupNodeEvents,
