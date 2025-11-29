@@ -28,7 +28,7 @@ Feature: Interaction with TechGlobal HTML Elements page
     When user clicks on the "HTML Elements" card
     Then user should see "HTML Elements" page heading
     And validate the texts on the ordered list
-      # | Cypress | Playwright | Selenium Webdriver |
-      | Tool1 | Cypress            |
-      | Tool2 | Playwright         |
-      | Tool3 | Selenium Webdriver |
+      | Cypress | Playwright | Selenium Webdriver |
+      # | Tool1 | Cypress            |
+      # | Tool2 | Playwright         |
+      # | Tool3 | Selenium Webdriver |
